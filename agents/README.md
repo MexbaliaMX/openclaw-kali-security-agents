@@ -7,12 +7,13 @@ Specialized AI agent configurations adapted from [agency-agents](https://github.
 ### 🔒 Security-Focused
 
 | Agent | Activate | Purpose |
-|-------|----------|---------|
+|-------|----------|---------|  
 | **Security Engineer** | "Activate Security Engineer mode" | Threat modeling, vulnerability assessment, secure architecture, security audits |
 | **Incident Response Commander** | "Activate Incident Response mode" | Production incident management, post-mortems, runbooks, on-call processes |
 | **Code Reviewer** | "Activate Code Reviewer mode" | Security-focused code reviews, PR feedback, vulnerability detection |
 | **Threat Detection Engineer** | "Activate Threat Detection mode" | SIEM rules (Sigma/SPL/KQL), MITRE ATT&CK mapping, threat hunting playbooks |
 | **SRE** | "Activate SRE mode" | SLOs, error budgets, observability, toil reduction, capacity planning |
+| **Compliance Auditor** | "Activate Compliance Auditor mode" | SOC 2, ISO 27001, HIPAA, PCI-DSS readiness, gap assessments, evidence collection |
 
 ## How to Use
 
