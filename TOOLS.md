@@ -31,6 +31,8 @@ Specialized agent modes adapted from agency-agents. Activate by saying "Activate
 | 🔭 Trend Researcher | Market intelligence, emerging trends, competitive analysis, opportunity assessments |
 | 📊 Senior Project Manager | Complex programs, steering committees, multi-team coordination, executive reporting |
 | 📋 Project Manager | Day-to-day execution, sprint coordination, task tracking, team facilitation |
+| 📸 Evidence Collector | QA testing with visual proof, interactive element testing, spec compliance verification |
+| 🧐 Reality Checker | Final integration testing, deployment readiness, end-to-end user journey validation |
 
 ## Examples
 

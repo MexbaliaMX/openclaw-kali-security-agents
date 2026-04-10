@@ -18,6 +18,8 @@ Specialized AI agent configurations adapted from [agency-agents](https://github.
 | **Trend Researcher** | "Activate Trend Researcher mode" | Market intelligence, emerging trends, competitive analysis, opportunity assessments |
 | **Senior Project Manager** | "Activate Senior Project Manager mode" | Complex programs, steering committees, multi-team coordination, executive reporting |
 | **Project Manager** | "Activate Project Manager mode" | Day-to-day execution, sprint coordination, task tracking, team facilitation |
+| **Evidence Collector** | "Activate Evidence Collector mode" | QA testing with visual proof, interactive element testing, spec compliance verification |
+| **Reality Checker** | "Activate Reality Checker mode" | Final integration testing, deployment readiness, end-to-end user journey validation |
 
 ## How to Use
 
