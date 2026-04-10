@@ -1,0 +1,45 @@
+=== Web Security Check: mexbalia.com ===
+Date: 2026-04-10
+Method: Manual HTTP analysis (production-safe)
+
+=== WPScan Status ===
+Result: BLOCKED by Cloudflare WAF (403)
+Assessment: ✅ WAF is working correctly
+Note: Legitimate scanner blocked = WAF is effective
+
+=== Nikto Scan ===
+Status: Started (rate-limited: 1 sec between requests)
+Note: Full scan takes 20-30 minutes for comprehensive check
+
+=== HTTP Security Headers ===
+Retrieved: 2026-04-10 01:03 AM
+
+PRESENT:
+✅ Permissions-Policy (configured for Privacy Pass/Cloudflare)
+
+MISSING (7/8):
+❌ Strict-Transport-Security (HSTS)
+❌ Content-Security-Policy (CSP)
+❌ X-Content-Type-Options
+❌ X-Frame-Options
+❌ X-XSS-Protection
+❌ Referrer-Policy
+❌ Cross-Origin-Embedder-Policy
+
+=== Technology Exposure ===
+- Server: Apache (version hidden ✅)
+- X-Powered-By: PHP/8.4.19 (exposed ⚠️)
+- X-Redirect-By: WordPress (exposed ⚠️)
+- REST API: /wp-json/ (accessible ⚠️)
+
+=== WordPress-Specific Findings ===
+- wp-json API: Exposed (user enumeration possible)
+- wp-login.php: Present (brute force target)
+- xmlrpc.php: Status TBD (check if accessible)
+- readme.html: Status TBD (should be removed)
+
+=== Risk Summary ===
+Critical: 0
+High: 2 (missing security headers, PHP version exposed)
+Medium: 3 (WordPress exposed, REST API, potential xmlrpc)
+Low: 1 (version disclosure)
