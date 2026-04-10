@@ -1,0 +1,39 @@
+=== Passive Reconnaissance: www.mexbalia.com ===
+Date: 2026-04-10
+Type: Non-intrusive (zero impact)
+
+=== HTTP Headers (www) ===
+HTTP/2 301 (redirect to non-www)
+Server: Apache
+X-Powered-By: PHP/8.4.19
+X-Redirect-By: WordPress
+Content-Type: text/html; charset=UTF-8
+
+=== HTTP Headers (mexbalia.com) ===
+HTTP/2 200
+Server: Apache
+X-Powered-By: PHP/8.4.19
+Content-Type: text/html; charset=UTF-8
+Link: <https://mexbalia.com/wp-json/>; rel="https://api.w.org/"
+Link: <https://mexbalia.com/wp-json/wp/v2/pages/29>; rel="alternate"
+
+=== Technology Stack Identified ===
+- Web Server: Apache
+- Language: PHP 8.4.19
+- CMS: WordPress (confirmed)
+- CDN/Protection: Cloudflare (hcaptcha, challenges)
+- REST API: Exposed (/wp-json/)
+
+=== Security Headers Analysis ===
+MISSING:
+- Strict-Transport-Security (HSTS)
+- Content-Security-Policy (CSP)
+- X-Content-Type-Options
+- X-Frame-Options
+- X-XSS-Protection
+
+PRESENT:
+- Permissions-Policy (configured for Privacy Pass/Cloudflare)
+
+=== DNS ===
+Pending dig/nmap scan
