@@ -28,6 +28,8 @@ Specialized agent modes adapted from agency-agents. Activate by saying "Activate
 | 🛡️ SRE | SLOs, observability, toil reduction |
 | 📋 Compliance Auditor | SOC 2, ISO 27001, HIPAA, PCI-DSS readiness & gap assessments |
 | 📚 Technical Writer | README files, API docs, tutorials, documentation audits |
+| 🔭 Trend Researcher | Market intelligence, emerging trends, competitive analysis, opportunity assessments |
+| 📊 Senior Project Manager | Project charters, plans, risk registers, status reports, stakeholder management |
 
 ## Examples
 
