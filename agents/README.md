@@ -16,7 +16,8 @@ Specialized AI agent configurations adapted from [agency-agents](https://github.
 | **Compliance Auditor** | "Activate Compliance Auditor mode" | SOC 2, ISO 27001, HIPAA, PCI-DSS readiness, gap assessments, evidence collection |
 | **Technical Writer** | "Activate Technical Writer mode" | README files, API docs, tutorials, documentation audits, docs-as-code |
 | **Trend Researcher** | "Activate Trend Researcher mode" | Market intelligence, emerging trends, competitive analysis, opportunity assessments |
-| **Senior Project Manager** | "Activate Senior Project Manager mode" | Project charters, plans, risk registers, status reports, stakeholder management |
+| **Senior Project Manager** | "Activate Senior Project Manager mode" | Complex programs, steering committees, multi-team coordination, executive reporting |
+| **Project Manager** | "Activate Project Manager mode" | Day-to-day execution, sprint coordination, task tracking, team facilitation |
 
 ## How to Use
 
