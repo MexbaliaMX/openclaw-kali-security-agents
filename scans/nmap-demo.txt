@@ -1,0 +1,6 @@
+=== Nmap Scan ===
+Target: Local HTML file (no network exposure)
+Scan Date: Fri Apr 10 12:55:27 AM EDT 2026
+
+Note: Target is a static HTML file for demo purposes.
+In production, would scan: nmap -sV -sC [target-host]

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Shop - Vulnerable Demo App</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f5f5f5; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        h1 { color: #333; }
+        .nav { background: #2196F3; color: white; padding: 10px; margin: -20px -20px 20px -20px; border-radius: 8px 8px 0 0; }
+        .form-group { margin: 15px 0; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input[type="text"], input[type="email"], input[type="password"] { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; }
+        button { background: #2196F3; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #1976D2; }
+        .alert { background: #ffebee; color: #c62828; padding: 10px; border-radius: 4px; margin: 10px 0; }
+        .success { background: #e8f5e9; color: #2e7d32; padding: 10px; border-radius: 4px; margin: 10px 0; }
+        footer { margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd; color: #666; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <h1>🛒 Test Shop</h1>
+        </div>
+        
+        <h2>Welcome to Test Shop</h2>
+        <p>This is a demo application for security testing.</p>
+        
+        <div class="alert">
+            <strong>⚠️ Security Notice:</strong> This application contains intentional vulnerabilities for testing purposes.
+        </div>
+        
+        <h3>🔐 Login</h3>
+        <form id="loginForm" action="/login" method="POST">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="admin@testshop.com" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        
+        <h3>🔍 Product Search</h3>
+        <form id="searchForm">
+            <div class="form-group">
+                <label for="search">Search Products:</label>
+                <input type="text" id="search" name="q" placeholder="Search..." oninput="searchProducts()">
+            </div>
+        </form>
+        <div id="searchResults"></div>
+        
+        <h3>📦 Products</h3>
+        <ul id="productList">
+            <li>Product A - $19.99</li>
+            <li>Product B - $29.99</li>
+            <li>Product C - $39.99</li>
+        </ul>
+        
+        <footer>
+            <p>&copy; 2026 Test Shop. For security testing only.</p>
+            <p><small>Admin panel: <a href="/admin">/admin</a> | API: <a href="/api/products">/api/products</a></small></p>
+        </footer>
+    </div>
+    
+    <script>
+        // Intentional vulnerable search (XSS demonstration)
+        function searchProducts() {
+            const query = document.getElementById('search').value;
+            // Vulnerable: Direct innerHTML with user input
+            document.getElementById('searchResults').innerHTML = '<p>Searching for: ' + query + '</p>';
+        }
+        
+        // Form submission prevention for demo
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Login submitted (demo only - no backend)');
+        });
+    </script>
+</body>
+</html>
