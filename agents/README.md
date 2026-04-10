@@ -14,6 +14,7 @@ Specialized AI agent configurations adapted from [agency-agents](https://github.
 | **Threat Detection Engineer** | "Activate Threat Detection mode" | SIEM rules (Sigma/SPL/KQL), MITRE ATT&CK mapping, threat hunting playbooks |
 | **SRE** | "Activate SRE mode" | SLOs, error budgets, observability, toil reduction, capacity planning |
 | **Compliance Auditor** | "Activate Compliance Auditor mode" | SOC 2, ISO 27001, HIPAA, PCI-DSS readiness, gap assessments, evidence collection |
+| **Technical Writer** | "Activate Technical Writer mode" | README files, API docs, tutorials, documentation audits, docs-as-code |
 
 ## How to Use
 

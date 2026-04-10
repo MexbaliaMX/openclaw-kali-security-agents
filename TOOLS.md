@@ -27,6 +27,7 @@ Specialized agent modes adapted from agency-agents. Activate by saying "Activate
 | 🎯 Threat Detection | SIEM rules, MITRE ATT&CK, threat hunting |
 | 🛡️ SRE | SLOs, observability, toil reduction |
 | 📋 Compliance Auditor | SOC 2, ISO 27001, HIPAA, PCI-DSS readiness & gap assessments |
+| 📚 Technical Writer | README files, API docs, tutorials, documentation audits |
 
 ## Examples
 
