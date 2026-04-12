@@ -114,7 +114,7 @@ assistant: ¡README.md para GitHub CREADO! 📝
 
 ```bash
 # Red Team
-"Activate Red Team mode - scan target 192.168.1.100"
+"Activate Red Team mode - scan target <target-ip>"
 
 # Web Pentest
 "Activate Web Pentesting mode - test http://target.com"
@@ -777,7 +777,7 @@ assistant: ¡Tareas pendientes ANOTADAS! ✅
 
 **Success Criteria:**
 - [ ] 3 VMs imported and running
-- [ ] Host-only network (192.168.56.0/24)
+- [ ] Host-only network (<lab-network>/24)
 - [ ] NO internet from lab VMs
 - [ ] Windows AD configured
 - [ ] Snapshots created
