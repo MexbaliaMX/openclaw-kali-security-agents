@@ -180,11 +180,11 @@ fi
 Target: Test lab environment (DVWA, Metasploitable)
 
 1. Activate Red Team mode
-   Command: "Activate Red Team mode - scan target 192.168.1.100"
+   Command: "Activate Red Team mode - scan target <test-target-ip>"
    Expected: Nmap scan initiated, results documented
 
 2. Activate Web Pentesting mode
-   Command: "Activate Web Pentesting mode - test DVWA at 192.168.1.100/dvwa"
+   Command: "Activate Web Pentesting mode - test DVWA at <test-target-ip>/dvwa"
    Expected: SQLi, XSS testing performed
 
 3. Activate Blue Team mode

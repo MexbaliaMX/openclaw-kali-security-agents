@@ -2,16 +2,16 @@
 
 **Date:** April 11, 2026 15:48 EDT  
 **Analyst:** KaliKlaw 🥷  
-**Scope:** 192.168.122.0/24 (Local lab network)
+**Scope:** `<lab-subnet>`/24 (Local lab network)
 
 ---
 
 ## 🌐 Network Topology
 
 **Network Type:** NAT Virtual (KVM/QEMU)  
-**Subnet:** 192.168.122.0/24  
-**Gateway:** 192.168.122.1 (Hypervisor)  
-**DNS:** 192.168.122.1 (ISP passthrough)
+**Subnet:** `<lab-subnet>`/24  
+**Gateway:** `<gateway-ip>` (Hypervisor)  
+**DNS:** `<gateway-ip>` (ISP passthrough)
 
 ---
 
@@ -19,10 +19,10 @@
 
 | IP | Hostname | OS | Purpose | Status |
 |----|----------|-----|---------|--------|
-| 192.168.122.111 | KaliKlaw | Kali Linux | Primary security node | ✅ Active |
-| 192.168.122.188 | OpenClaw Node 1 | Ubuntu Server | OpenClaw agent | ✅ Authorized |
-| 192.168.122.234 | OpenClaw Node 2 | Ubuntu Server | OpenClaw agent | ✅ Authorized |
-| 192.168.122.1 | Gateway | QEMU/KVM | Hypervisor/NAT | ✅ Infrastructure |
+| `<node-111-ip>` | KaliKlaw | Kali Linux | Primary security node | ✅ Active |
+| `<node-188-ip>` | OpenClaw Node 1 | Ubuntu Server | OpenClaw agent | ✅ Authorized |
+| `<node-234-ip>` | OpenClaw Node 2 | Ubuntu Server | OpenClaw agent | ✅ Authorized |
+| `<gateway-ip>` | Gateway | QEMU/KVM | Hypervisor/NAT | ✅ Infrastructure |
 
 **Total Hosts:** 4/256 (1.5% utilization)
 
@@ -30,19 +30,19 @@
 
 ## 🔓 Services Exposed
 
-### KaliKlaw (192.168.122.111)
+### KaliKlaw (`<node-111-ip>`)
 ```
 PORT   STATE SERVICE    NOTES
-22/tcp open  ssh        Exposed to local network
+22/tcp open  ssh        Exposed to `<trusted-network>`
 ```
 
-### OpenClaw Nodes (188, 234)
+### OpenClaw Nodes (`<node-188-ip>`, `<node-234-ip>`)
 ```
 PORT   STATE SERVICE    NOTES
-22/tcp open  ssh        Exposed to local network
+22/tcp open  ssh        Exposed to `<trusted-network>`
 ```
 
-### Gateway (192.168.122.1)
+### Gateway (`<gateway-ip>`)
 ```
 PORT   STATE SERVICE    NOTES
 22/tcp open  ssh        Hypervisor management
@@ -59,7 +59,7 @@ PORT   STATE SERVICE    NOTES
 - `0.0.0.0:5353` — mDNS (OpenClaw discovery)
 
 **Outbound Connections:**
-- 10+ connections to gateway (192.168.122.1)
+- 10+ connections to gateway (`<gateway-ip>`)
 - OpenClaw Gateway traffic (normal)
 
 ---
