@@ -19,6 +19,10 @@
 memory/*.md
 !memory/README.md
 
+# Mexbalia reports and scans (may contain sensitive data)
+mexbalia/
+mexbalia-mx/
+
 # IDE & Editors
 .vscode/
 .idea/
