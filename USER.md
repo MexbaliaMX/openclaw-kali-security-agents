@@ -3,8 +3,9 @@
 - **Name:** Wulfrano Moreno
 - **What to call them:** Wulfrano
 - **Pronouns:** 
-- **Timezone:** 
+- **Timezone:** America/New_York
 - **Notes:** Running OpenClaw on Kali Linux, connected via Telegram
+- **Interests:** Network Chuck fan (cybersecurity content), agnostic/non-religious
 
 ## Context
 
