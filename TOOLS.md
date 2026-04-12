@@ -336,7 +336,7 @@ Specialized agent modes adapted from agency-agents. Activate by saying "Activate
 
 ### SSH
 
-- home-server → 192.168.1.100, user: admin
+- home-server → `<internal-ip>`, user: admin
 
 ### TTS
 

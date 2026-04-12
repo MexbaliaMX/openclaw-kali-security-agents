@@ -1,0 +1,48 @@
+# Secrets & Credentials
+*.env
+.env.local
+.env.*.local
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+
+# OpenClaw runtime & config
+.openclaw/config.json
+.openclaw/config.local.json
+.openclaw/secrets/
+.openclaw/tokens/
+
+# Memory (session data may contain sensitive info)
+memory/*.md
+!memory/README.md
+
+# IDE & Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+*.log
+logs/
+
+# Build artifacts
+dist/
+build/
+node_modules/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Testing
+coverage/
+.coverage
+.htmlcov/
