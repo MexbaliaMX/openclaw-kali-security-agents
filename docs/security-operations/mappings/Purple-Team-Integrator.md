@@ -142,8 +142,8 @@ cd DetectionLab/Vagrant
 vagrant up
 
 # Access VMs
-# DC: 192.168.56.2
-# WORKSTATION: 192.168.56.3
+# DC: <lab-dc-ip>
+# WORKSTATION: <lab-workstation-ip>
 ```
 
 ---

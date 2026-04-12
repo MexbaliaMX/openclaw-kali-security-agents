@@ -1,7 +1,7 @@
 # 🧪 KaliKlaw Agent Testing Plan
 
 **Objective:** Test the 12 specialized agents in a realistic security audit scenario  
-**Environment:** Kali Linux instance (192.168.122.111)  
+**Environment:** Kali Linux instance (`<node-ip>`)  
 **Duration:** 60-90 minutes  
 **Ethics:** Only test systems you own or have explicit authorization to test
 

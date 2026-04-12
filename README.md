@@ -54,7 +54,7 @@ python3 --version
 
 ```bash
 # Red Team Engagement
-"Activate Red Team mode - scan target 192.168.1.100"
+"Activate Red Team mode - scan target <target-ip>"
 
 # Web Application Pentest
 "Activate Web Pentesting mode - test http://target.com"
@@ -277,7 +277,7 @@ sudo apt install -y virtualbox-7.0
 #    - Windows Server 2022 (Microsoft Evaluation Center)
 #    - Metasploitable 3 (GitHub)
 
-# 3. Configure host-only network (192.168.56.0/24)
+# 3. Configure host-only network (<lab-network>/24)
 # 4. Isolate from production network
 # 5. Create snapshots before testing
 ```
@@ -295,7 +295,7 @@ sudo apt install -y virtualbox-7.0
 "Activate Red Team mode"
 
 # Reconnaissance
-"Scan target 192.168.1.100 with nmap"
+"Scan target <target-ip> with nmap"
 "Enumerate subdomains for target.com"
 
 # Exploitation

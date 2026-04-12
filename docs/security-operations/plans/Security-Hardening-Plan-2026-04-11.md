@@ -160,7 +160,7 @@ sudo ss -tlnp | grep :22  # Verificar puerto 22 escuchando
 **Prioridad:** 🔴 CRÍTICA  
 **Nodos:** 111, 188, 234
 
-#### Paso 2.1: Configurar UFW en KaliKlaw (111)
+#### Paso 2.1: Configurar UFW en KaliKlaw (`<node-111-ip>`)
 ```bash
 # Reset y configuración base
 sudo ufw --force reset
@@ -168,7 +168,7 @@ sudo ufw default deny incoming
 sudo ufw default allow outgoing
 
 # SSH desde red local
-sudo ufw allow from 192.168.122.0/24 to any port 22 proto tcp comment 'SSH from lab network'
+sudo ufw allow from <trusted-network>/24 to any port 22 proto tcp comment 'SSH from lab network'
 
 # OpenClaw Gateway (localhost)
 sudo ufw allow from 127.0.0.1 to any port 18789,18791,42725 proto tcp comment 'OpenClaw Gateway'
@@ -184,7 +184,7 @@ sudo ufw --force enable
 sudo ufw status verbose
 ```
 
-#### Paso 2.2: Configurar UFW en nodos Ubuntu (188, 234)
+#### Paso 2.2: Configurar UFW en nodos Ubuntu (`<node-188-ip>`, `<node-234-ip>`)
 ```bash
 # En CADA nodo Ubuntu
 sudo ufw --force reset
@@ -192,12 +192,12 @@ sudo ufw default deny incoming
 sudo ufw default allow outgoing
 
 # SSH desde red local
-sudo ufw allow from 192.168.122.0/24 to any port 22 proto tcp comment 'SSH from lab network'
+sudo ufw allow from <trusted-network>/24 to any port 22 proto tcp comment 'SSH from lab network'
 
 # SSH desde nodos específicos (inter-node)
-sudo ufw allow from 192.168.122.111 to any port 22 proto tcp comment 'SSH from KaliKlaw'
-sudo ufw allow from 192.168.122.188 to any port 22 proto tcp comment 'SSH from Node1'  # Solo en 234
-sudo ufw allow from 192.168.122.234 to any port 22 proto tcp comment 'SSH from Node2'  # Solo en 188
+sudo ufw allow from <node-111-ip> to any port 22 proto tcp comment 'SSH from KaliKlaw'
+sudo ufw allow from <node-188-ip> to any port 22 proto tcp comment 'SSH from Node1'  # Solo en 234
+sudo ufw allow from <node-234-ip> to any port 22 proto tcp comment 'SSH from Node2'  # Solo en 188
 
 # ICMP (ping)
 sudo ufw allow in proto icmp comment 'Allow ping'
@@ -209,13 +209,13 @@ sudo ufw status verbose
 
 #### Paso 2.3: Verificar conectividad
 ```bash
-# Desde KaliKlaw, probar conexión a nodos
-ping -c 3 192.168.122.188
-ping -c 3 192.168.122.234
+# Desde KaliKlaw (`<node-111-ip>`), probar conexión a nodos
+ping -c 3 <node-188-ip>
+ping -c 3 <node-234-ip>
 
 # Probar SSH
-ssh 192.168.122.188 "hostname"
-ssh 192.168.122.234 "hostname"
+ssh <node-188-ip> "hostname"
+ssh <node-234-ip> "hostname"
 
 # Verificar reglas UFW
 sudo ufw status numbered
