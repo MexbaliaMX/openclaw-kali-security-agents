@@ -78,12 +78,12 @@ ssh-keygen -t ed25519 -C "KaliKlaw Admin Key" -f ~/.ssh/id_ed25519
 #### Paso 1.2: Copiar llaves a nodos Ubuntu
 ```bash
 # Copiar llave pública a ambos nodos
-ssh-copy-id -i ~/.ssh/id_ed25519.pub 192.168.122.188
-ssh-copy-id -i ~/.ssh/id_ed25519.pub 192.168.122.234
+ssh-copy-id -i ~/.ssh/id_ed25519.pub <node-188-ip>
+ssh-copy-id -i ~/.ssh/id_ed25519.pub <node-234-ip>
 
 # Verificar conexión sin password
-ssh -i ~/.ssh/id_ed25519 192.168.122.188 "hostname"
-ssh -i ~/.ssh/id_ed25519 192.168.122.234 "hostname"
+ssh -i ~/.ssh/id_ed25519 <node-188-ip> "hostname"
+ssh -i ~/.ssh/id_ed25519 <node-234-ip> "hostname"
 ```
 
 #### Paso 1.3: Hardening SSH en nodos Ubuntu
@@ -132,12 +132,12 @@ sudo systemctl status ssh
 #### Paso 1.4: Agregar host keys a known_hosts
 ```bash
 # En KaliKlaw (111)
-ssh-keyscan 192.168.122.188 >> ~/.ssh/known_hosts 2>/dev/null
-ssh-keyscan 192.168.122.234 >> ~/.ssh/known_hosts 2>/dev/null
+ssh-keyscan <node-188-ip> >> ~/.ssh/known_hosts 2>/dev/null
+ssh-keyscan <node-234-ip> >> ~/.ssh/known_hosts 2>/dev/null
 
 # Verificar
-ssh-keygen -F 192.168.122.188
-ssh-keygen -F 192.168.122.234
+ssh-keygen -F <node-188-ip>
+ssh-keygen -F <node-234-ip>
 ```
 
 #### Paso 1.5: Verificar configuración
