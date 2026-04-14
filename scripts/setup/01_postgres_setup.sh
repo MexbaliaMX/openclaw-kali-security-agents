@@ -58,7 +58,11 @@ EOF
 # Run migrations
 echo ""
 echo "Running database migrations..."
-sudo -u postgres psql -d $DB_NAME -f scripts/db/migrations/001_initial_schema.sql
+if ! sudo -u postgres psql -d $DB_NAME -f scripts/db/migrations/001_initial_schema.sql; then
+    echo "❌ Migration failed!"
+    exit 1
+fi
+echo "✅ Migration completed successfully"
 
 # Grant permissions on new tables
 sudo -u postgres psql -d $DB_NAME <<EOF
@@ -125,12 +129,17 @@ echo "=========================================="
 echo ""
 echo "Credentials saved to: $CREDENTIALS_FILE"
 echo "⚠️  IMPORTANT: Save the password securely and delete this file after copying"
+echo "⚠️  Password will be cleared from screen in 10 seconds..."
 echo ""
 echo "Connection string:"
 echo "  postgresql://$DB_USER:[PASSWORD]@localhost:5432/$DB_NAME"
 echo ""
+sleep 10
+clear
+echo "✅ Password cleared from screen"
+echo ""
 echo "Next steps:"
-echo "  1. Copy credentials to secure location"
-echo "  2. Delete $CREDENTIALS_FILE"
+echo "  1. Copy credentials from $CREDENTIALS_FILE to secure location"
+echo "  2. Delete $CREDENTIALS_FILE (rm $CREDENTIALS_FILE)"
 echo "  3. Proceed to Redis setup (scripts/setup/02_redis_setup.sh)"
 echo ""

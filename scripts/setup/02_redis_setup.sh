@@ -45,12 +45,12 @@ openssl genrsa -out ca.key 4096
 openssl req -x509 -new -nodes -sha256 -key ca.key -days 3650 -out ca.crt \
     -subj "/C=US/ST=California/L=San Francisco/O=RL Mechanism/CN=RL-CA"
 
-# Generate server certificate
+# Generate server certificate (2 years validity)
 openssl genrsa -out redis.key 2048
 openssl req -new -sha256 -key redis.key -out redis.csr \
     -subj "/C=US/ST=California/L=San Francisco/O=RL Mechanism/CN=localhost"
 openssl x509 -req -sha256 -in redis.csr -CA ca.crt -CAkey ca.key -CAcreateserial \
-    -out redis.crt -days 365
+    -out redis.crt -days 730
 
 # Move certificates to Redis directory
 sudo mv ca.crt redis.crt redis.key $TLS_DIR/

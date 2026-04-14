@@ -87,8 +87,8 @@ exporters:
     tls:
       insecure: true
   
-  debug:
-    verbosity: detailed
+  # debug:  # Uncomment for debugging, comment out in production
+  #   verbosity: detailed
 
 service:
   telemetry:

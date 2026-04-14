@@ -8,6 +8,7 @@ for the RL mechanism using PostgreSQL with pgvector extension.
 import psycopg2
 from psycopg2.extras import RealDictCursor, Json
 from psycopg2 import pool
+from psycopg2.pool import PoolError
 from typing import Optional, List, Dict, Any, Tuple
 import json
 import hashlib
@@ -55,7 +56,12 @@ class PostgreSQLStorage:
     @contextmanager
     def _get_cursor(self, commit: bool = False):
         """Get database cursor from pool."""
-        conn = self.connection_pool.getconn()
+        try:
+            conn = self.connection_pool.getconn(timeout=10)  # 10s timeout
+        except PoolError as e:
+            logger.error(f"Connection pool exhausted: {e}")
+            raise RuntimeError("Database connection pool exhausted - try increasing pool_size") from e
+        
         cursor = None
         try:
             cursor = conn.cursor(cursor_factory=RealDictCursor)
@@ -224,6 +230,11 @@ class PostgreSQLStorage:
         Returns:
             List of aggregated metrics by hour
         """
+        # Whitelist aggregation functions to prevent SQL injection
+        VALID_AGGREGATIONS = {'avg', 'sum', 'min', 'max', 'count'}
+        if aggregation not in VALID_AGGREGATIONS:
+            raise ValueError(f"Invalid aggregation: {aggregation}. Must be one of {VALID_AGGREGATIONS}")
+        
         with self._get_cursor() as cursor:
             cursor.execute(f"""
                 SELECT 

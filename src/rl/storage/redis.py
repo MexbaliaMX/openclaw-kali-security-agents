@@ -10,6 +10,7 @@ import json
 from typing import Optional, List, Dict, Any
 from datetime import timedelta
 import logging
+from contextlib import contextmanager
 
 logger = logging.getLogger(__name__)
 
@@ -29,7 +30,9 @@ class RedisStorage:
     
     def __init__(self, host: str = 'localhost', port: int = 6380, 
                  password: str = None, use_tls: bool = True,
-                 tls_ca: str = None, tls_cert: str = None, tls_key: str = None):
+                 tls_ca: str = '/etc/redis/tls/ca.crt', 
+                 tls_cert: str = '/etc/redis/tls/redis.crt', 
+                 tls_key: str = '/etc/redis/tls/redis.key'):
         """
         Initialize Redis storage.
         
