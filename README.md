@@ -9,6 +9,8 @@
 
 > **Comprehensive security agent framework with 49 specialized agents and 685+ Kali Linux tool mappings for automated penetration testing, incident response, and security operations.**
 
+> ⚠️ **AGENT-FIRST MANDATE:** All tasks MUST leverage the Agents and Sub-Agents infrastructure. Manual execution without agents is deprecated. See [Agent-First Workflow](#-agent-first-workflow) below.
+
 ---
 
 ## 🎯 Overview
@@ -62,6 +64,91 @@ python3 --version
 # OSINT Investigation
 "Activate OSINT mode - investigate username testuser123"
 ```
+
+---
+
+## 🤖 Agent-First Workflow
+
+**⚠️ MANDATORY:** All tasks MUST leverage the Agents and Sub-Agents infrastructure.
+
+This framework is built on the principle that **agents are the primary execution mechanism**. Manual workflows without agent involvement are deprecated and discouraged.
+
+### Core Principles
+
+| Principle | Description |
+|-----------|-------------|
+| **Agent-First** | Always activate a relevant agent before executing tasks |
+| **Specialization** | Route tasks to domain-expert agents |
+| **Orchestration** | Use multiple agents for complex workflows |
+| **Documentation** | Agents document their work automatically |
+
+### When to Use Agents
+
+**✅ ALWAYS Use Agents For:**
+- Security assessments (Red Team, Blue Team, Pentesting)
+- Compliance audits (SOC 2, ISO 27001, HIPAA, PCI-DSS)
+- Incident response and forensics
+- Tool execution and workflow automation
+- Documentation and reporting
+- Project planning and coordination
+
+**❌ NEVER Do Manually:**
+- Running security tools without agent context
+- Ad-hoc security testing without documentation
+- Multi-step workflows without orchestration
+- Tasks that require audit trails
+
+### Sub-Agent Orchestration
+
+For complex, multi-phase tasks:
+
+```bash
+# Example: Full security engagement
+"Activate Red Team mode - initial recon"
+  ↓ spawns sub-agents for:
+  - OSINT investigation (passive)
+  - Network scanning (active)
+  - Vulnerability assessment
+  ↓
+"Activate Web Pentesting mode - exploit findings"
+  ↓ spawns sub-agents for:
+  - SQL injection testing
+  - XSS discovery
+  - Authentication bypass
+  ↓
+"Activate Blue Team mode - validate detections"
+  ↓ spawns sub-agents for:
+  - SIEM rule review
+  - Alert correlation
+  - Gap analysis
+```
+
+### Agent Activation Patterns
+
+**Single Agent:**
+```bash
+"Activate Security Engineer mode - threat model this architecture"
+```
+
+**Multi-Agent Collaboration:**
+```bash
+"Activate Purple Team mode - coordinate Red and Blue teams for validation exercise"
+```
+
+**Sub-Agent Delegation:**
+```bash
+"Activate Project Manager mode - plan Q2 security roadmap with input from Security Engineer, Compliance Auditor, and SRE"
+```
+
+### Why Agent-First?
+
+1. **Consistency** - Agents follow documented playbooks
+2. **Audit Trail** - All actions logged and traceable
+3. **Expertise** - Agents specialize in their domains
+4. **Scalability** - Sub-agents handle parallel work
+5. **Quality** - Agents enforce best practices
+
+**Bottom line:** If you're not using agents, you're not using this framework correctly. 🤖
 
 ---
 

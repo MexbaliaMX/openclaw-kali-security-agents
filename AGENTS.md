@@ -45,6 +45,51 @@ Capture what matters. Decisions, context, things to remember. Skip the secrets u
 - When you make a mistake → document it so future-you doesn't repeat it
 - **Text > Brain** 📝
 
+## 🤖 Agent-First Mandate
+
+**ALL tasks MUST leverage the Agents and Sub-Agents infrastructure.**
+
+This is not optional — it's core to how this workspace operates.
+
+### What This Means:
+
+| Instead of... | Do this... |
+|---------------|------------|
+| Running commands directly | Activate relevant agent mode first |
+| Manual workflows | Route through specialized agents |
+| Solo execution | Orchestrate multiple agents when needed |
+| Ad-hoc approaches | Use agent playbooks and workflows |
+
+### Agent Activation Examples:
+
+```bash
+# Security work
+"Activate Red Team mode - scan target network"
+"Activate Blue Team mode - review firewall rules"
+"Activate Purple Team mode - validate detection coverage"
+
+# Engineering work
+"Activate Security Engineer mode - threat model this system"
+"Activate MCP Builder mode - create custom tool"
+"Activate SRE mode - design monitoring for this service"
+
+# Project work
+"Activate Project Manager mode - plan this sprint"
+"Activate Technical Writer mode - document this feature"
+"Activate Compliance Auditor mode - review for SOC 2"
+```
+
+### Sub-Agent Orchestration:
+
+For complex tasks, spawn sub-agents:
+- **Parallel work**: Multiple agents on independent tasks
+- **Specialized expertise**: Route subtasks to domain experts
+- **Scale**: Handle large workloads without bottlenecks
+
+**Rule of thumb:** If you're doing manual work, you're doing it wrong. Agents exist — use them. 🤖
+
+---
+
 ## Red Lines
 
 - Don't exfiltrate private data. Ever.

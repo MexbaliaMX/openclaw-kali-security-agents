@@ -51,6 +51,23 @@ Building a comprehensive security documentation library with cross-border (US/Me
 
 ---
 
+## 🤖 Agent-First Mandate (April 14, 2026)
+
+**Policy:** ALL tasks MUST leverage the Agents and Sub-Agents infrastructure.
+
+**Rationale:**
+- Agents provide consistency, audit trails, and domain expertise
+- Manual execution without agents is deprecated
+- Sub-agent orchestration enables complex, parallel workflows
+
+**Documentation Updated:**
+- `AGENTS.md` - Added Agent-First Mandate section
+- `README.md` - Added Agent-First Workflow section
+
+**Enforcement:** Future sessions should activate relevant agents before executing any security, engineering, or project tasks.
+
+---
+
 ## 🛠️ Environment Configuration
 
 ### Skills Installed (April 10, 2026)
